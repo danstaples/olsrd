@@ -670,7 +670,7 @@ P2pdPacketCaptured(unsigned char *encapsulationUdpData, int nBytes)
     dst.v4 = ipHeader->ip_dst;
     
     for (walker = nonOlsrInterfaces; walker != NULL; walker = walker->next) {
-      if (walker->intAddr == src) {
+      if (walker->intAddr.v4.s_addr == src.v4.s_addr) {
 	found = 1;
       }
     }
@@ -737,7 +737,7 @@ P2pdPacketCaptured(unsigned char *encapsulationUdpData, int nBytes)
     memcpy(&dst.v6, &ipHeader6->ip6_dst, sizeof(struct in6_addr));
     
     for (walker = nonOlsrInterfaces; walker != NULL; walker = walker->next) {
-      if (walker->intAddr == src) {
+      if (walker->intAddr.v6.s6_addr == src.v6.s6_addr) {
 	found = 1;
       }
     }
