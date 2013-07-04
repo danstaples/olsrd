@@ -835,7 +835,7 @@ P2pdPacketCaptured(unsigned char *encapsulationUdpData, int nBytes)
   }
   
   // Send packet with non-local RR list (this will include any question RRs)
-  p2 = ldns_pkt_clone(p);  // create new mDNS packet p2 cloned from original packet
+  /*p2 = ldns_pkt_clone(p);  // create new mDNS packet p2 cloned from original packet
   ldns_rr_list_deep_free(p2->_answer);
   ldns_rr_list_deep_free(p2->_additional);
   ldns_rr_list_deep_free(p2->_authority);
@@ -845,7 +845,7 @@ P2pdPacketCaptured(unsigned char *encapsulationUdpData, int nBytes)
   for (i = 0; i < 3; ++i)
     ldns_pkt_set_section_count(p2, i + 1, nonlocal_list_count[i]);
   DnssdSendPacket(p2, pkt_type, encapsulationUdpData, nBytes, 0);
-  ldns_pkt_free(p2);
+  ldns_pkt_free(p2);*/
   
   // For each batch of RRs grouped by TTL, populate new mDNS packet to encapsulate in an OLSR packet and send to mesh
   for (ttl_bucket = rr_buf; ttl_bucket != NULL; ttl_bucket=ttl_bucket->hh.next) {    
