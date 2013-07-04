@@ -678,7 +678,7 @@ P2pdPacketCaptured(unsigned char *encapsulationUdpData, int nBytes)
 #ifdef INCLUDE_DEBUG_OUTPUT
       OLSR_PRINTF(1,"%s: NON SOURCE PACKET\n", PLUGIN_NAME_SHORT);
 #endif
-      olsr_p2pd_gen(encapsulationUdpData, nBytes, NULL);
+      //olsr_p2pd_gen(encapsulationUdpData, nBytes, NULL);
       return;
     }
 
@@ -722,7 +722,7 @@ P2pdPacketCaptured(unsigned char *encapsulationUdpData, int nBytes)
       OLSR_PRINTF(1, "%s: Error getting ipv4 dns packet\n", PLUGIN_NAME_SHORT);
 #endif
       ldns_pkt_free(p);
-      olsr_p2pd_gen(encapsulationUdpData, nBytes, NULL);
+      //olsr_p2pd_gen(encapsulationUdpData, nBytes, NULL);
       return;
     }
     
@@ -745,7 +745,7 @@ P2pdPacketCaptured(unsigned char *encapsulationUdpData, int nBytes)
 #ifdef INCLUDE_DEBUG_OUTPUT
       OLSR_PRINTF(1,"%s: NON SOURCE PACKET\n", PLUGIN_NAME_SHORT);
 #endif
-      olsr_p2pd_gen(encapsulationUdpData, nBytes, NULL);
+      //olsr_p2pd_gen(encapsulationUdpData, nBytes, NULL);
       return;
     }
 
@@ -791,7 +791,7 @@ P2pdPacketCaptured(unsigned char *encapsulationUdpData, int nBytes)
       OLSR_PRINTF(1, "%s: Error getting ipv6 dns packet\n", PLUGIN_NAME_SHORT);
 #endif
       ldns_pkt_free(p);
-      olsr_p2pd_gen(encapsulationUdpData, nBytes, NULL);
+      //olsr_p2pd_gen(encapsulationUdpData, nBytes, NULL);
       return;
     }
     
